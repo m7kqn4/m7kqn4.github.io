@@ -1,83 +1,111 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="ru">
 
   <head>
-    <title>Пример формы HTML</title>
+    <title>Форма HTML</title>
   </head>
 
   <body>
 
-    <h1>Пример формы HTML</h1>
+    <h1>Форма HTML</h1>
 
-    <form action="/"
-      method="POST">
+      <form action="/"
+        method="POST">
 
       <label>
-        Однострочное текстовое поле:<br />
+        Введите ваше ФИО: (однострочное текстовое поле)<br />
         <input name="field-name-1"
-          value="начальное значение" />
+          value="Иванов Иван Иванович" />
       </label><br />
 
-      <label>
-        Текстовое поле email:<br />
-        <input name="field-email"
-          type="email"
-          placeholder="Введите вашу почту" />
-      </label><br />
+      <p>
+        Введите ваш номер телефона: (текстовое поле tel)<br />
+        <label>
+          <input name="field-tel"
+            type="tel"
+            placeholder="+7 (XXX) XXX-XX-XX"
+            pattern="^\+7[0-9]{10}$"
+            title="Вы ввели не все цифры или использовали недопустимые символы."
+            required />
+        </label>
+      </p>
 
-      <label>
-        Текстовое поле даты:<br />
-        <input name="field-date"
-          value="2019-08-13"
-          type="date" />
-      </label><br />
+      <p>
+        Введите вашу почту: (текстовое поле email)<br />
+        <label>
+          <input name="field-email"
+            type="email"
+            placeholder="user@example.com"
+            title="Адрес электронной почты должен содержать символ @ и домен."
+            required />
+        </label>
+      </p>
 
-      <label>
-        Многострочное текстовое поле:<br />
-        <textarea name="field-name-2">начальное значение</textarea>
-      </label><br />
+      <p>
+        Ваша дата рождения: (текстовое поле даты)<br />
+        <label>
+          <input name="field-date"
+            value="2007-01-14"
+            type="date" />
+        </label>
+      </p>
 
-      <label>
-        Список (combobox):<br />
-        <select name="field-name-3">
-          <option value="Значение1">Метка1</option>
-          <option value="Значение2" selected="selected">Метка2</option>
-          <option value="Значение3">Метка3</option>
-        </select>
-      </label><br />
+      <p>
+        Ваш пол: (радиокнопки)<br />
+        <label><input type="radio" checked="checked"
+          name="radio-group-1" value="Значение1" />
+          женский</label>
+        <label><input type="radio"
+          name="radio-group-1" value="Значение2" />
+          мужской</label>
+      </p>
 
-      <label>
-        Список (listbox с множественным выбором):
-        <br />
-        <select name="field-name-4[]"
-          multiple="multiple">
-          <option value="Значение1">Метка1</option>
-          <option value="Значение2" selected="selected">Метка2</option>
-          <option value="Значение3" selected="selected">Метка3</option>
-        </select>
-      </label><br />
+      <p>
+        Ваш любимый язык программирования: (список (listbox с множественным выбором))<br />
+        <label>
+          <select name="field-name-4[]"
+            multiple="multiple">
+            <option value="Значение1">Pascal</option>
+            <option value="Значение2" selected="selected">C</option>
+            <option value="Значение3" selected="selected">C++</option>
+            <option value="Значение4" selected="selected">JavaScript</option>
+            <option value="Значение5" selected="selected">PHP</option>
+            <option value="Значение6" selected="selected">Python</option>
+            <option value="Значение7" selected="selected">Java</option>
+            <option value="Значение8" selected="selected">Haskel</option>
+            <option value="Значение9" selected="selected">Clojure</option>
+            <option value="Значение10" selected="selected">Prolog</option>
+            <option value="Значение11" selected="selected">Scala</option>
+          </select>
+        </label>
+      </p>
 
-      Радиокнопки:<br />
-      <label><input type="radio" checked="checked"
-        name="radio-group-1" value="Значение1" />
-        Подпись радиокнопки 1</label>
-      <label><input type="radio"
-        name="radio-group-1" value="Значение2" />
-        Подпись радиокнопки 2</label><br />
+      <p>
+        Ваша биография: (многострочное текстовое поле)<br />
+        <label>
+          <textarea name="field-name-2"
+            placeholder="Расскажите кратко о себе..."
+            title="Напишите здесь биографию или дополнительную информацию">...
+          </textarea>
+        </label>
+      </p>
 
-      Чекбокс:<br />
-      <label><input type="checkbox" checked="checked"
-        name="check-1" />
-        Подпись чекбокса ставим справа</label><br />
+      <p>
+        Подтверждение: (чекбокс)<br />
+        <label><input type="checkbox" checked="checked"
+          name="check-1" required
+          title="Необходимо подтвердить ознакомление с контрактом" />
+            с контрактом ознакомлен(а)
+        </label>
+      </p>
 
       Кнопка отправки формы,
       при нажатии заполненные в форму данные
       отправятся в формате urlencoded методом
       POST или GET по адресу URL_отправки_данных:
-      <input type="submit" value="Отправить" />
+      <input type="submit" value="Сохранить" />
     </form>
-
-  </body>
-
-</html> 
+  
+</body>
+</html>
