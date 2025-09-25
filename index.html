@@ -3,8 +3,9 @@
 <html lang="ru">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="newstyle.css">
 </head>
 
 <body>
@@ -156,13 +157,13 @@
         method="POST">
 
       <label>
-        Введите ваше ФИО: (однострочное текстовое поле)<br />
+        Введите ваше ФИО:<br />
         <input name="field-name-1"
           value="Иванов Иван Иванович" />
       </label><br />
 
       <p>
-        Введите ваш номер телефона: (текстовое поле tel)<br />
+        Введите ваш номер телефона:<br />
         <label>
           <input name="field-tel"
             type="tel"
@@ -174,7 +175,7 @@
       </p>
 
       <p>
-        Введите вашу почту: (текстовое поле email)<br />
+        Введите вашу почту:<br />
         <label>
           <input name="field-email"
             type="email"
@@ -185,7 +186,7 @@
       </p>
 
       <p>
-        Ваша дата рождения: (текстовое поле даты)<br />
+        Ваша дата рождения:<br />
         <label>
           <input name="field-date"
             value="2007-01-14"
@@ -194,7 +195,7 @@
       </p>
 
       <p>
-        Ваш пол: (радиокнопки)<br />
+        Ваш пол:<br />
         <label><input type="radio" checked="checked"
           name="radio-group-1" value="Значение1" />
           женский</label>
@@ -204,7 +205,7 @@
       </p>
 
       <p>
-        Ваш любимый язык программирования: (список (listbox с множественным выбором))<br />
+        Ваш любимый язык программирования:<br />
         <label>
           <select name="field-name-4[]"
             multiple="multiple">
@@ -224,7 +225,7 @@
       </p>
 
       <p>
-        Ваша биография: (многострочное текстовое поле)<br />
+        Ваша биография:<br />
         <label>
           <textarea name="field-name-2"
             placeholder="Расскажите кратко о себе..."
@@ -234,7 +235,7 @@
       </p>
 
       <p>
-        Подтверждение: (чекбокс)<br />
+        Подтверждение:<br />
         <label><input type="checkbox" checked="checked"
           name="check-1" required
           title="Необходимо подтвердить ознакомление с контрактом" />
