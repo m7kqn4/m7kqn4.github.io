@@ -27,7 +27,7 @@ body {
 }
 
 .logo img {
-  width: 150px;
+  width: 80px;
   height: auto;
   border-radius: 50%;
 }
@@ -72,7 +72,6 @@ nav {
   color: #000000;
   background-color: rgba(255, 255, 255, 0.2);
 }
-
 .dropdown {
   position: relative;
 }
@@ -126,10 +125,12 @@ nav {
   background-color: #f0f0f0;
   margin: 10px 0;
   padding: 15px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .form-section {
-  order: 3;
+  order: 3; /* Форма остается третьей */
   background-color: #f0f0f0;
   margin: 10px 0;
   padding: 15px;
@@ -145,17 +146,19 @@ nav {
   border-collapse: collapse;
   margin-bottom: 20px;
   font-size: 14px;
+  min-width: 600px;
 }
 
 .table-section th,
 .table-section td {
   border: 1px solid #ccc;
-  padding: 6px;
+  padding: 8px;
   text-align: left;
+  white-space: nowrap;
 }
 
 .table-section th {
-  background-color: #a5bad6;
+  background-color: #5878aa;
   color: white;
 }
 
@@ -281,7 +284,7 @@ nav {
     transform: translateX(-50%);
     padding-left: 0;
   }
-  
+
   nav {
     width: auto;
     order: 0;
@@ -352,11 +355,25 @@ nav {
     margin: 0 0 40px 0;
     padding: 0;
   }
+
+  .table-section {
+    overflow-x: visible;
+  }
   
+  .table-section table {
+    min-width: auto;
+    white-space: normal;
+  }
+  
+  .table-section th,
+  .table-section td {
+    white-space: normal;
+  }
+ 
   .links-section img {
     max-width: none;
   }
-  
+
   .table-section table {
     width: 100%;
     max-width: 960px;
@@ -368,7 +385,7 @@ nav {
   .table-section td {
     padding: 10px;
   }
-  
+
   .table-section th {
     background-color: #5878aa;
     color: white;
