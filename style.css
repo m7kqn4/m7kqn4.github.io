@@ -21,9 +21,9 @@ body {
 
 .header-inner { 
   display: flex; 
-  flex-direction: row; 
+  flex-direction: column; 
   align-items: center; 
-  gap: 15px; 
+  gap: 10px; 
 } 
 
 .logo img {
