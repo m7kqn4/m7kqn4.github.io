@@ -7,15 +7,20 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    min-height: 100%;
+    background-image: url("фон.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center;
 }
 
 body {
-    font-family: Georgia, serif;
-    line-height: 1.6;
-    color: #0b152f;
-    background: white;
-    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
 }
 
 .container {
@@ -23,15 +28,23 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 section {
     padding: 100px 0;
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
 }
+
 
 .section-header {
     text-align: center;
     margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
 }
 
 .section-title {
@@ -40,6 +53,8 @@ section {
     margin-bottom: 20px;
     line-height: 1.2;
     color: #0b152f;
+    position: relative;
+    z-index: 2;
 }
 
 .section-subtitle {
@@ -47,6 +62,8 @@ section {
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .btn {
@@ -63,6 +80,8 @@ section {
     font-size: 1rem;
     font-family: Georgia, serif;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .btn-primary {
@@ -82,14 +101,17 @@ section {
     width: 100%;
     z-index: 1000;
     padding: 20px 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(11, 21, 47, 0.1);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 .logo {
@@ -141,7 +163,7 @@ section {
     display: none;
     background: none;
     border: none;
-    color: #93bfe5;
+    color: #0b152f;
     font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -224,6 +246,12 @@ section {
     align-items: center;
     overflow: hidden;
     padding-top: 180px;
+    background: none !important;
+}
+
+.hero-section-with-video::before,
+.hero-section-with-video::after {
+    display: none;
 }
 
 .video-background-container {
@@ -345,7 +373,7 @@ section {
 
 .services {
     padding: 80px 0;
-    background: white;
+    backdrop-filter: blur(5px);
 }
 
 .services .section-title {
@@ -437,7 +465,7 @@ section {
 
 .stones-section {
     padding: 100px 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.205);
 }
 
 .stones-grid {
@@ -521,7 +549,6 @@ section {
 
 .jewelry-collage {
     padding: 100px 0;
-    background: white;
 }
 
 .collage-container {
@@ -639,7 +666,6 @@ section {
 }
 
 .testimonials-section {
-    background-color: #ffffff;
     padding: 80px 0;
 }
 
@@ -702,7 +728,6 @@ section {
 
 .pricing-section {
     padding: 80px 20px;
-    background-color: #fefefe;
 }
 
 .pricing-section .section-title {
@@ -810,7 +835,6 @@ section {
 
 .faq {
     padding: 100px 0;
-    background: white;
 }
 
 .faq-container {
@@ -912,6 +936,11 @@ section {
     background: #0b152f;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 80px 0 40px;
+}
+
+.footer::before,
+.footer::after {
+    display: none;
 }
 
 .footer-main {
@@ -1107,39 +1136,6 @@ textarea.form-control {
     font-size: 0.9rem;
 }
 
-@media (max-width: 1024px) {
-    .hero .container,
-    .footer-main {
-        gap: 50px;
-    }
-    
-    .stones-grid,
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .collage-container {
-        grid-template-rows: repeat(6, 120px);
-        gap: 12px;
-    }
-    
-    .collage-item:nth-child(1),
-    .collage-item:nth-child(6) {
-        grid-column: span 4;
-    }
-    
-    .collage-item:nth-child(2),
-    .collage-item:nth-child(4) {
-        grid-column: span 3;
-    }
-    
-    .collage-item:nth-child(3),
-    .collage-item:nth-child(5) {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-}
-
 @media (max-width: 768px) {
     section {
         padding: 70px 0;
@@ -1264,7 +1260,8 @@ textarea.form-control {
         left: -100%;
         width: 100%;
         flex-direction: column;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
         padding: 30px;
         gap: 20px;
         transition: all 0.3s ease;
@@ -1297,6 +1294,11 @@ textarea.form-control {
 }
 
 @media (max-width: 576px) {
+    body::before,
+    body::after {
+        opacity: 0.6;
+    }
+    
     .services-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
