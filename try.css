@@ -686,13 +686,13 @@ section {
 .testimonial-card {
     background-color: #394363;
     border-radius: 16px;
-    padding: 70px 50px;
+    padding: 50px 100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
 .testimonial-text {
-    font-size: 18px;
+    font-size: 19px;
     color: white;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -1569,4 +1569,5 @@ textarea.form-control {
         margin: 0 auto;
     }
 }
+
 
